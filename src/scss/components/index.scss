@@ -1,0 +1,215 @@
+// Стили для основной страницы
+/*--------------------Hero--------------------*/
+
+.hero {
+	height: 100vh;
+	min-height: 500px;
+	position: relative;
+	.hero-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: 100%;
+		// height: 100%;
+		object-fit: cover;
+	}
+	// .hero__container
+	&__container {
+	}
+	// .hero__suptitle
+	&__suptitle {
+		display: inline-block;
+		margin-bottom: 30px;
+		font-size: 13px;
+		color: #2570fb;
+		text-transform: uppercase;
+	}
+	// .hero__content
+	&__content {
+		position: absolute;
+		bottom: 150px;
+	}
+	// .hero__title
+	&__title {
+		@include adaptive-value("font-size", 64, 30);
+		line-height: 1.4;
+		text-transform: uppercase;
+		max-width: min(660px, 100%);
+	}
+}
+
+/*--------------------/Hero--------------------*/
+
+/*--------------------Creations--------------------*/
+
+.creations {
+	padding-bottom: clamp(2.188rem, 1.803rem + 1.92vw, 3.438rem);
+	// .creations__container
+	&__container {
+		display: grid;
+		@media (min-width: em(769)) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	// .creations__logo
+	&__logo {
+		width: 360px;
+		img {
+			width: 100%;
+		}
+		@media (max-width: em(768)) {
+			display: none;
+		}
+	}
+	// .creations__content
+	&__content {
+	}
+	// .creations__title
+	&__title {
+		font-weight: 800;
+		@include adaptive-value("font-size", 27, 16);
+		line-height: 1.45;
+		max-width: min(490px, 100%);
+		span {
+			background: var(--gradient);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			text-fill-color: transparent;
+		}
+	}
+	// .creations__table
+	&__table {
+		margin-top: clamp(2.5rem, 1.923rem + 2.88vw, 4.375rem);
+		border-top: 1px solid #bfbfbf;
+		border-bottom: 1px solid #bfbfbf;
+	}
+	// .creations__item
+	&__item {
+	}
+}
+.item-creations {
+	padding: clamp(1.875rem, 1.779rem + 0.48vw, 2.188rem) 0;
+	display: flex;
+	align-items: flex-start;
+	gap: clamp(1.25rem, 0.865rem + 1.92vw, 2.5rem);
+	&:not(:last-child) {
+		border-bottom: 1px solid #bfbfbf;
+	}
+	// .item-creations__image
+	&__image {
+		flex: 0 0 60px;
+		height: 60px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: fill;
+		}
+	}
+	// .item-creations__info
+	&__info {
+	}
+	// .item-creations__title
+	&__title {
+		font-weight: 800;
+		font-size: clamp(1rem, 0.732rem + 0.54vw, 1.188rem);
+		margin-bottom: 12px;
+		text-transform: uppercase;
+	}
+	// .item-creations__text
+	&__text {
+		font-size: clamp(0.75rem, 0.482rem + 0.54vw, 0.938rem);
+		line-height: 1.55;
+	}
+}
+
+/*--------------------/Creations--------------------*/
+
+/*--------------------Consulting--------------------*/
+
+.consulting {
+	padding: clamp(2.188rem, 1.803rem + 1.92vw, 3.438rem) 0;
+	// .consulting__container
+	&__container {
+	}
+	// .consulting__header
+	&__header {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		@media (max-width: em(768)){
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+	// .consulting__title
+	&__title {
+	}
+	// .consulting__subtext
+	&__subtext {
+		font-weight: 400;
+		font-size: clamp(0.875rem, 0.856rem + 0.1vw, 0.938rem);
+		line-height: 1.55;
+	}
+	// .consulting__body
+	&__body {
+		margin-top: clamp(2.5rem, 1.923rem + 2.88vw, 4.375rem);
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: clamp(1.875rem, 1.683rem + 0.96vw, 2.5rem);
+		@media (max-width: em(624)){
+			grid-template-columns: 1fr;
+		}
+	}
+	// .consulting__item
+	&__item {
+	}
+}
+
+.item-consulting {
+	padding: clamp(1.875rem, 1.779rem + 0.48vw, 2.188rem);
+	background-color: #f9f9f9;
+	border: 1px solid #efefef;
+	border-radius: 18px;
+	&:nth-child(3) {
+		@media (min-width: em(624)){
+			grid-column: 1/3;
+		}
+		.item-consulting__list {
+			@include grid-сard(400px, 1fr, 0);
+		}
+	}
+	// .item-consulting__title
+	&__title {
+		font-weight: 800;
+		font-size: clamp(1rem, 0.942rem + 0.29vw, 1.188rem);
+		text-transform: uppercase;
+	}
+	// .item-consulting__list
+	&__list {
+		margin-top: clamp(1.25rem, 0.962rem + 1.44vw, 2.188rem);
+	}
+	// .item-consulting__item
+	&__item {
+		padding-left: 30px;
+		position: relative;
+		font-size: clamp(0.75rem, 0.692rem + 0.29vw, 0.938rem);
+		line-height: 1.55;
+		&:not(:last-child){
+			margin-bottom: clamp(1.125rem, 1.048rem + 0.38vw, 1.375rem);
+		}
+		&:before {
+			content: "";
+			position: absolute;
+			top: 3px;
+			left: 0;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background: var(--gradient);
+		}
+	}
+}
+
+/*--------------------/Consulting--------------------*/
